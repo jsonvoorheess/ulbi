@@ -1,21 +1,22 @@
 import React from 'react';
-import "./styles/index.scss"
-import {Link, Route, Routes} from "react-router-dom";
+import "./styles/index.scss";
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
 import {AppRouter} from "app/providers/router";
+import {Navbar} from "widgets/Navbar";
+import {Sidebar} from "widgets/Sidebar";
 
 
 
 export const App = () => {
-    const { theme, changeTheme } = useTheme()
-
+    const { theme } = useTheme()
     return (
         <div className={classNames("app", {}, [theme])} >
-            <Link to="/" >Главная</Link>
-            <Link to="/about" >О нас</Link>
-            <button onClick={changeTheme} >ChangeTheme</button>
-                <AppRouter />
+                <Navbar />
+                <div className="content-page" >
+                    <Sidebar />
+                    <AppRouter />
+                </div>
         </div>
     );
 };
