@@ -4,9 +4,9 @@ type Mods = Record<string, boolean>
 export function classNames(cls:string, mods?:Mods, additional?: string[]):string {
     return [
         cls,
-        ...additional,
-        ...Object.entries(mods)
+        ...Object.entries(mods || {})
             .filter(([_, value]) => value)
-            .map(([key]) => key)
+            .map(([key]) => key),
+        ...additional || [],
     ].join(" ")
 }
