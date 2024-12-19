@@ -1,7 +1,7 @@
-import React, {FC} from 'react';
-import {Link, LinkProps} from "react-router-dom";
+import React, { FC } from "react";
+import { Link, LinkProps } from "react-router-dom";
 import * as styles from "./AppLink.module.scss"
-import {classNames} from "shared/lib/classNames/classNames";
+import { classNames } from "shared/lib/classNames/classNames";
 
 
 export const enum AppLinkTheme {
