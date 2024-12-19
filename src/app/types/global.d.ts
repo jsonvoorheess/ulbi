@@ -4,4 +4,6 @@ declare module "*.svg" {
     export default content;
 }
 
-declare const __IS_DEV__: boolean
+declare const __IS_DEV__: boolean;
+
+declare module "webpack-bundle-analyzer";
