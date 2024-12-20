@@ -31,7 +31,7 @@ const config = {
 
     setupFilesAfterEnv: ["<rootDir>/config/jest/setupTests.js"],
     moduleNameMapper: {
-        "\\.(css|scss)$": "babel-jest"
+        "\\.(css|scss)$": "identity-obj-proxy",
     },
 
 };
