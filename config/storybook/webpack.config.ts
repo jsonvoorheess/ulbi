@@ -1,7 +1,6 @@
 import webpack from "webpack";
 import { BuildPaths } from "../build/types/config";
 import path from "path";
-import { buildCssLoaders } from "../build/loaders/buildCssLoaders";
 
 export default ({ config }: { config: webpack.Configuration }) => {
     const paths:BuildPaths = {
@@ -27,7 +26,23 @@ export default ({ config }: { config: webpack.Configuration }) => {
         use: ["@svgr/webpack"],
     })
 
-    config.module.rules.push(buildCssLoaders(true))
+    config.module.rules.push({
+        test: /\.s[ac]ss$/i,
+        use: [
+            "style-loader",
+            {
+                loader: "css-loader",
+                options: {
+                    modules: {
+                        auto: (resPath:  string) => Boolean(resPath.includes(".module.")),
+                        localIdentName: "[path][name]__[local]--[hash:base64:8]",
+                        namedExport: false,
+                    },
+                }
+            },
+            "sass-loader",
+        ],
+    })
 
     return config
 }

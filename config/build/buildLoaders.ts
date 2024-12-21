@@ -8,9 +8,7 @@ export function buildLoaders(options:BuildOptions):webpack.RuleSetRule[] {
     const cssLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-            // Creates `style` nodes from JS strings
             options.isDev ? "style-loader" : MiniCssExtractPlugin.loader,
-            // Translates CSS into CommonJS
             {
                 loader: "css-loader",
                 options: {
@@ -23,7 +21,6 @@ export function buildLoaders(options:BuildOptions):webpack.RuleSetRule[] {
                     },
                 }
             },
-            // Compiles Sass to CSS
             "sass-loader",
         ],
     }
