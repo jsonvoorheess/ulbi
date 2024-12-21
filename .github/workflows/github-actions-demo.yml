@@ -12,15 +12,15 @@ jobs:
         node-version: [ 20.9.0 ]
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
         run: npm install
       - name: build production project
-        run: npm run build:dev
+        run: npm run build:prod
       - name: linting project
         run: npm run lint:ts
       - name: linting css
