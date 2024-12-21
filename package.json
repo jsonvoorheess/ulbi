@@ -10,7 +10,9 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "stylelint:scss": "npx stylelint \"**/*.scss\"",
     "stylelint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.js  --env=jsdom"
+    "unit": "jest --config ./config/jest/jest.config.js  --env=jsdom",
+    "storybook": "storybook dev -p 6006 -c ./config/storybook",
+    "build-storybook": "storybook build -c ./config/storybook"
   },
   "jest": {
     "moduleNameMapper": {
@@ -30,7 +32,16 @@
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "^7.26.0",
+    "@chromatic-com/storybook": "^3.2.3",
     "@eslint/js": "^9.17.0",
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/addon-interactions": "^8.4.7",
+    "@storybook/addon-onboarding": "^8.4.7",
+    "@storybook/addon-webpack5-compiler-swc": "^1.0.5",
+    "@storybook/blocks": "^8.4.7",
+    "@storybook/react": "^8.4.7",
+    "@storybook/react-webpack5": "^8.4.7",
+    "@storybook/test": "^8.4.7",
     "@svgr/webpack": "^8.1.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -50,6 +61,7 @@
     "css-loader": "^7.1.2",
     "eslint": "^9.17.0",
     "eslint-plugin-react": "^7.37.2",
+    "eslint-plugin-storybook": "^0.11.1",
     "file-loader": "^6.2.0",
     "globals": "^15.14.0",
     "html-webpack-plugin": "^5.6.3",
@@ -58,6 +70,7 @@
     "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.83.0",
     "sass-loader": "^16.0.4",
+    "storybook": "^8.4.7",
     "style-loader": "^4.0.0",
     "stylelint": "^16.12.0",
     "stylelint-config-standard-scss": "^14.0.0",
@@ -71,6 +84,7 @@
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
+    "@newhighsco/storybook-addon-svgr": "^2.0.39",
     "i18next": "^24.1.2",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-http-backend": "^3.0.1",
@@ -79,5 +93,10 @@
     "react-dom": "^19.0.0",
     "react-i18next": "^15.2.0",
     "react-router-dom": "^7.0.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }

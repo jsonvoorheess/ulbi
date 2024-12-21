@@ -1,5 +1,5 @@
 import React from "react";
-import * as cls from "./PageLoader.module.scss"
+import cls from "./PageLoader.module.scss"
 import { classNames } from "shared/lib/classNames/classNames";
 
 export const PageLoader = () => {

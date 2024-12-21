@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
-import * as styles from "./Navbar.module.scss"
+import styles from "./Navbar.module.scss"
 import { AppLink } from "shared/AppLink";
 import { AppLinkTheme } from "shared/AppLink/ui/AppLink";
 import { useTranslation } from "react-i18next";

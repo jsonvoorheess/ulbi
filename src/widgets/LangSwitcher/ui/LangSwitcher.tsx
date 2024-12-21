@@ -2,7 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/Button";
 import { ThemeButton } from "shared/Button/ui/Button";
-import * as cls from "./LangSwitcher.module.scss"
+import cls from "./LangSwitcher.module.scss"
 
 
 export const LangSwitcher = () => {

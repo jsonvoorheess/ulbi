@@ -1,5 +1,5 @@
 import React from "react";
-import * as cls from "./ErrorPage.module.scss"
+import cls from "./ErrorPage.module.scss"
 import { useTranslation } from "react-i18next";
 import { Button } from "shared/Button";
 
