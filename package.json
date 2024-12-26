@@ -1,7 +1,8 @@
 {
   "name": "ulbi",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "json-server/index.js",
+  "type": "commonjs",
   "scripts": {
     "start": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
@@ -12,7 +13,9 @@
     "stylelint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "unit": "jest --config ./config/jest/jest.config.js  --env=jsdom",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
-    "build-storybook": "storybook build -c ./config/storybook"
+    "build-storybook": "storybook build -c ./config/storybook",
+    "serve": "json-server -w ./json-server/db.json --port 3001",
+    "start:dev:server": "node json-server/index.js"
   },
   "jest": {
     "moduleNameMapper": {
@@ -67,6 +70,7 @@
     "html-webpack-plugin": "^5.6.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
+    "json-server": "^1.0.0-beta.3",
     "mini-css-extract-plugin": "^2.9.2",
     "sass": "^1.83.0",
     "sass-loader": "^16.0.4",
@@ -84,13 +88,18 @@
     "webpack-dev-server": "^5.2.0"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^2.5.0",
+    "@types/react-redux": "^7.1.34",
+    "fs-extra": "^11.2.0",
     "i18next": "^24.1.2",
     "i18next-browser-languagedetector": "^8.0.2",
     "i18next-http-backend": "^3.0.1",
     "jest-environment-jsdom": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.2.0",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^7.0.2"
   },
   "eslintConfig": {
